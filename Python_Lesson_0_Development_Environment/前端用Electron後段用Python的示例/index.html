@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python-Electron App</title>
+  </head>
+  <body>
+    <h1>Python-Electron Communication</h1>
+    <input id="expression" type="text" placeholder="Enter an expression, e.g., 2+2">
+    <button id="calculate">Calculate</button>
+    <p>Result: <span id="result"></span></p>
+
+    <script>
+      const { ipcRenderer } = require('electron');
+
+      document.getElementById('calculate').addEventListener('click', () => {
+        const expression = document.getElementById('expression').value;
+        ipcRenderer.send('asynchronous-message', { command: 'calculate', expression: expression });
+      });
+
+      ipcRenderer.on('asynchronous-reply', (event, result) => {
+        document.getElementById('result').innerText = result;
+      });
+    </script>
+  </body>
+</html>
