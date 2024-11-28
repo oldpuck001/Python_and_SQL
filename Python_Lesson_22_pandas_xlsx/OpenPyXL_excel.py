@@ -60,7 +60,7 @@ sheet['C4'].alignment = openpyxl.styles.Alignment(horizontal="center")
 # 填充：黃色、橘色、綠色
 sheet['E4'].fill = openpyxl.styles.PatternFill(fgColor='FFFF00', fill_type='solid')
 sheet['F4'].fill = openpyxl.styles.PatternFill(fgColor='FFC000', fill_type='solid')
-sheet['G4'].fill = openpyxl.styles.PatternFill(fgColor='00B050', fill_type='solid')
+sheet['G4'].fill = openpyxl.styles.PatternFill(fgColor='92D050', fill_type='solid')
 
 # 数字格式化（使用Excel的格式化字符串）
 sheet['A5'].value = 33333.3333
