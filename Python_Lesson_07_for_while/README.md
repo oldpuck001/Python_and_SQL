@@ -13,3 +13,11 @@ break：
 
 else子句:
 在循環中添加一條else子句，它僅在沒有調用break時才執行。
+
+碼農高天關於生成器的視頻：
+YouTube：https://youtu.be/vfQdRp_PhhQ?si=2OFlB4jxE_gIco8M
+b站：https://www.bilibili.com/video/BV1ca411t7A9/?share_source=copy_web
+
+碼農高天關於迭代器的視頻：
+YouTube：https://youtu.be/tWOD43HQIRA?si=OnulOCKKFgMYlWIj
+b站：https://www.bilibili.com/video/BV1KS4y1D7Qb/?share_source=copy_web
