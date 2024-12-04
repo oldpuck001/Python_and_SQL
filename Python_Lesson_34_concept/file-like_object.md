@@ -1,0 +1,3 @@
+file-like_object.md
+
+類似於文件的對象是支持read和readline（可能還有write和writelines）等方法的對象。
