@@ -33,6 +33,13 @@ data_2 = {'name': ['Mike', 'Yang', 'Tom', 'Losa'],
           'job': ['teacher', 'student', 'student', 'accounting']
         }
 
+# 创建一个空白的 DataFrame
+empty_df = pd.DataFrame()
+
+# 创建带有列名的空白 DataFrame
+columns = ['Column1', 'Column2', 'Column3']
+empty_df_with_columns = pd.DataFrame(columns=columns)
+
 # 使用列表或字典構造DataFrame
 df = pd.DataFrame(data=data_1, columns=columns, index=index)
 df_dict = pd.DataFrame(data=data_2, index=index)
