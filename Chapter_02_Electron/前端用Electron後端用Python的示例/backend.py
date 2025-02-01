@@ -1,8 +1,14 @@
 # backend.py
+
 import sys
 import json
 
+# windows下解决编码问题的语句
+import io
+sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
+
 def main():
+    
     # 從標準輸入讀取數據
     input_data = sys.stdin.read()
 
