@@ -2,8 +2,9 @@
 
 const { ipcRenderer } = require('electron');
 
+let file_path = '';
+
 export async function page_1() {
     const contentDiv = document.getElementById('content');
-    contentDiv.style.border = 'none';
-    contentDiv.innerHTML = `<h1 style="text-align: center; width: 100%;">演示页面（page.js）</h1>`;
+    contentDiv.innerHTML = `<h1>演示页面（page.js）</h1>`;
 }

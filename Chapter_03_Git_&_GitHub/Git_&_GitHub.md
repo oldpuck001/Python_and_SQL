@@ -1,8 +1,11 @@
+Git_&_GitHub.md
+
 Git與GitHub
 
 初始化指令：git init
 
 建立不需要的被追蹤的文件清單：在項目文件夾中新建 .gitignore 文件，將不需要追蹤的文件名寫入其中，可以使用通配符，例如：*
+常用文件清单见示例。
 
 Git中文件的四種狀態：Untracked、Tracked、Staged、Committed。
 檢查當前目錄中每個文件的狀態：git status

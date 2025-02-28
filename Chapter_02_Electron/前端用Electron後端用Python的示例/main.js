@@ -38,7 +38,7 @@ ipcMain.handle('dialog:openFile', async (event, filters) => {
   if (canceled) {
     return null;
   } else {
-    return filePaths[0];
+    return filePaths[0];                // 返回選擇的文件路徑
   }
 });
 
