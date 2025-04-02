@@ -13,8 +13,8 @@ print(values)
 x, y, z = values
 print(x)
 
-scoundrel={'name': 'Robin', 'girlfriend': 'Marion'}
-key, value=scoundrel.popitem()
+scoundrel = {'name': 'Robin', 'girlfriend': 'Marion'}
+key, value = scoundrel.popitem()
 print(key)
 print(value)
 

@@ -1,4 +1,4 @@
-Assignment.py
+Assignment.md
 
 Python中的賦值(assignment)就是將變量與值(或對象)關聯起來。
 
