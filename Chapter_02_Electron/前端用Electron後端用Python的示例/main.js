@@ -6,9 +6,6 @@ const path = require('path');
 
 let project_folder = '';
 
-// 禁用硬件加速，在編寫程序用的MacBook pro2018上，使用硬件加速會報錯，所以禁用
-// app.disableHardwareAcceleration();
-
 function createWindow() {
 
   // 創建瀏覽器窗口
