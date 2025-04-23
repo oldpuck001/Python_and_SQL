@@ -7,19 +7,26 @@
 # 返回一個特性,所有參數都是可選的
 
 class Rectangle:
+
     def __init__(self):
+
         self.width = 0
         self.height = 0
+
     def set_size(self, size):
+
         self.width, self.height = size
+
     def get_size(self):
+
         return self.width, self.height
+    
     size = property(get_size, set_size)
 
 r = Rectangle()
+
 r.width = 10
 r.height = 5
-
 print(r.size)
 
 r.size = 150, 100
@@ -31,7 +38,7 @@ print(r.width)
 # 如果沒有指定任何參數，創建的特性將既不可讀也不可寫。
 # 如果指定一個參數（獲取方法），創建的特性將是只讀的。
 # 如果指定兩個參數，創建的特性將是可讀可寫的。
-#第三個參數是可選的，指定用於刪除屬性的方法（這個方法不接受任何參數）。
+# 第三個參數是可選的，指定用於刪除屬性的方法（這個方法不接受任何參數）。
 # 第四個參數是可選的，指定一個文檔字符串。
 
 # 這些參數分別名為fget、fset、fdel和doc。如果要創建一個只可寫且帶文檔字符串的特性，可使用它們作為關鍵字參數來實現。
