@@ -1,5 +1,6 @@
 # DataFrame_column_row.py
 
+# df.shape
 # df.columns
 # df.columns.name
 # df.rename
@@ -23,6 +24,10 @@ data = {'name': ['Mike', 'Yang', 'Tom', 'Losa'],
 
 df = pd.DataFrame(data=data, index=index)
 print(df)
+
+# shape方法獲取行與列的數量，返回 (行數, 列數) 的元組
+print('獲取行與列的數量')
+print(df.shape)
 
 # 獲取列的信息，構造DataFrame數據結構時，如過沒有提供列明，將會從0開始的數字為列編號
 print('獲取列的信息')
