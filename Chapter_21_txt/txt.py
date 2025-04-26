@@ -1,6 +1,12 @@
-# txt_py.py
+# txt.py
 
-with open('somefile.txt', 'r+') as f:
+import os
+
+# 獲取當前腳本所在的目錄
+script_dir = os.path.dirname(os.path.abspath(__file__))
+txt_path = os.path.join(script_dir, 'somefile.txt')
+
+with open(txt_path, 'r+') as f:
     print('f.read(3)指令執行結果：')
     print(f.read(3))
     print('f.read()指令執行結果：')
@@ -41,7 +47,7 @@ with open('somefile.txt', 'r+') as f:
     print('f.read()指令執行結果：')
     print(f.read())
 
-with open('somefile.txt') as f:
+with open(txt_path) as f:
     for line in f:
         print('循環指令執行結果：')
         print(line, end='')

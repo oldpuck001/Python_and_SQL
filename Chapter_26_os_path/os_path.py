@@ -1,4 +1,4 @@
-# os_path_py.py
+# os_path.py
 
 import os
 
@@ -33,6 +33,10 @@ os.makedirs(targetPath_4, exist_ok=True)
 
 # 返回给定路径的上级目录
 print(os.path.dirname(targetPath_1))
+
+
+# 獲取當前腳本所在的目錄
+print(os.path.dirname(os.path.abspath(__file__)))
 
 
 # 將檔案路徑分成兩部分
