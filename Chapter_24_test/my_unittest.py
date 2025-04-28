@@ -1,4 +1,4 @@
-# unittest_py.py
+# my_unittest.py
 
 import unittest, my_math
 

@@ -57,8 +57,23 @@ def save_as_file(event=None):
     top.title("Text Editor - " + file_path)
 
 
+# 創建Tk實例
 top=tk.Tk()
+
+# 設置窗口的標題
 top.title("Simple Editor")
+
+# 設置窗口的大小與位置（+10+20' 設定了窗口左上角位於屏幕的(10, 20)位置）
+top.geometry('960x500+140+130')
+
+# 設置窗口的最小大小
+top.minsize(640, 360)
+
+# 設置窗口的最大大小
+top.maxsize(1280, 720)
+
+# 設置窗口是否可以被用戶調整大小，兩個參數分別表示寬度和高度是否可以調整
+top.resizable(False, False)
 
 contents = ScrolledText(top)
 contents.pack(side=tk.BOTTOM, expand=True, fill=tk.BOTH)

@@ -117,7 +117,10 @@ mainFilePath=''
 # Create the main window
 mainWindow=tk.Tk()
 mainWindow.title("Text Editor")
-mainWindow.minsize(900,500)
+mainWindow.geometry('960x500+140+130')
+mainWindow.minsize(800, 300)
+mainWindow.maxsize(1280, 720)
+mainWindow.resizable(True, True)
 
 # Create the main window menu
 mainMenu=tk.Menu(mainWindow)

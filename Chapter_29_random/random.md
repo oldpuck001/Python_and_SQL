@@ -1,4 +1,4 @@
-README.md
+random.md
 
 模塊random包含生成偽隨機數的函數，有助於編寫模擬程序或生成隨機輸出的程序。
 

@@ -1,4 +1,5 @@
 # my_math.py
 
 def product(x, y):
-    pass
+    
+    return x * y
