@@ -1,4 +1,4 @@
-README.md
+docx_example.md
 
 可以使用python-docx這個第三方庫來創建和修改Word文檔。
 
@@ -16,18 +16,18 @@ header_run._element.rPr.rFonts.set(qn('w:eastAsia'), 'SimSun')
 
 header_run：
 表示页眉段落中一个文本运行（Run）对象。
-一个 Run 对象代表段落中一段连续的、具有相同格式的文本。
+一个Run对象代表段落中一段连续的、具有相同格式的文本。
 
 header_run._element：
-_element 是底层的 XML 元素，表示 Run 的内部结构。
-在 Word 文档的 XML 中，每个 Run 对应 <w:r> 标签。
+_element是底层的XML元素，表示Run的内部结构。
+在Word文档的XML中，每个Run对应<w:r>标签。
 
 header_run._element.rPr：
-rPr 是表示 Run 属性的 XML 元素，对应 <w:rPr> 标签。
+rPr是表示Run属性的XML元素，对应<w:rPr>标签。
 它包含了与文本格式相关的所有设置，如字体、字号、颜色等。
 
 .rFonts：
-rFonts 是 <w:rFonts> 标签，用于指定字体。
+rFonts是<w:rFonts>标签，用于指定字体。
 这个标签可以定义不同语言文本的字体，包括：
 w:ascii：拉丁字符（英文等）的字体。
 w:eastAsia：东亚字符（中文、日文、韩文等）的字体。
@@ -35,6 +35,6 @@ w:hAnsi：高 ANSI 字符的字体。
 w:cs：复杂脚本（如阿拉伯语）的字体。
 
 .set(qn('w:eastAsia'), 'SimSun')：
-set 方法用于修改 XML 属性。
-qn('w:eastAsia') 生成了 w:eastAsia 的命名空间，表示修改东亚字符字体。
-'SimSun' 是具体的字体名称（宋体）。
+set方法用于修改XML属性。
+qn('w:eastAsia')生成了w:eastAsia的命名空间，表示修改东亚字符字体。
+'SimSun'是具体的字体名称（宋体）。
