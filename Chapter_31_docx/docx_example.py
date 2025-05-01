@@ -84,20 +84,6 @@ paragraph_mid.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER         # 居中
 doc.add_page_break()
 
 
-# 再添加一個段落
-doc.add_paragraph('新頁面的段落。')
-
-# 添加段落并设置字体和对齐方式
-paragraph_example = doc.add_paragraph()
-text_example = f'    我们{name}（以下简称“贵公司”）财务报表，包括{date}的资产负债表，{period}的利润表、现金流量表、所有者权益变动表以及相关财务报表附注。'
-run_example = paragraph_example.add_run(text_example)
-run_example.font.name = 'SimSun'                                    # 设置字体
-run_example._element.rPr.rFonts.set(qn('w:eastAsia'), 'SimSun')     # 设置中文字体
-run_example.font.size = Pt(12)                                      # 设置字号
-run_example.bold = True                                             # 加粗
-paragraph_example.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT           # 设置左对齐
-
-
 # 添加表格一個4x3的表格
 table_for = doc.add_table(rows=4, cols=3)
 table_for.style = 'Table Grid'                                  # 设置表格样式，Table Grid是默認樣式
@@ -116,6 +102,20 @@ for i, row in enumerate(table_for.rows):
             cell.paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER    # 第一行居中对齐
         else:
             cell.paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.LEFT      # 其他行靠右对齐
+
+
+# 添加一個段落
+doc.add_paragraph('新頁面的段落。')
+
+# 添加段落并设置字体和对齐方式
+paragraph_example = doc.add_paragraph()
+text_example = f'    我们{name}（以下简称“贵公司”）财务报表，包括{date}的资产负债表，{period}的利润表、现金流量表、所有者权益变动表以及相关财务报表附注。'
+run_example = paragraph_example.add_run(text_example)
+run_example.font.name = 'SimSun'                                    # 设置字体
+run_example._element.rPr.rFonts.set(qn('w:eastAsia'), 'SimSun')     # 设置中文字体
+run_example.font.size = Pt(12)                                      # 设置字号
+run_example.bold = True                                             # 加粗
+paragraph_example.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT           # 设置左对齐
 
 
 # 添加表格一個6x2的表格
