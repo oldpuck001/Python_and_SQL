@@ -1,4 +1,4 @@
-# description_py.py
+# SQLite_description.py
 
 # 獲取欄位名稱
 
@@ -23,7 +23,7 @@ print(curs.description)
 
 # 提取欄位名稱
 column_names = [col[0] for col in curs.description]
-print(column_names)  # 輸出：['id', 'name', 'age']
+print(column_names)                                     # 輸出：['id', 'name', 'age']
 
 # 關閉連接
 conn.close()

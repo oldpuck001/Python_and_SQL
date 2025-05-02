@@ -1,8 +1,8 @@
-# sqlite_order_by.py
+# SQLite_order_by.py
 
 import sqlite3
 
-conn = sqlite3.connect('Python_Lesson_23_SQL/tysql.sqlite')
+conn = sqlite3.connect('Chapter_33_SQL/tysql.sqlite')
 
 curs = conn.cursor()
 

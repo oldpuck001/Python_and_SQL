@@ -1,4 +1,4 @@
-# sqlite_where.py
+# SQLite_where.py
 
 import sqlite3
 
@@ -17,7 +17,7 @@ BETWEEN     在指定的两个值之间
 IS NULL     为 NULL 值
 '''
 
-conn = sqlite3.connect('Python_Lesson_23_SQL/tysql.sqlite')
+conn = sqlite3.connect('Chapter_33_SQL/tysql.sqlite')
 
 curs = conn.cursor()
 

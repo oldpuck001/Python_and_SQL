@@ -1,4 +1,4 @@
-# SQLite_py.py
+# SQLite_basic.py
 
 import os
 import sqlite3

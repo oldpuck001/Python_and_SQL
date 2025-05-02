@@ -1,10 +1,10 @@
-# select_sqlite.py
+# SQLite_select.py
 
 import sqlite3
 
 # 創建直接到數據庫文件的連接（可以是文件的相對路徑或絕對路徑）
 # 如果指定的文件不存在，將自動創建它
-conn = sqlite3.connect('Python_Lesson_23_SQL/tysql.sqlite')
+conn = sqlite3.connect('Chapter_33_SQL/tysql.sqlite')
 
 # 從連接獲取游標
 curs = conn.cursor()

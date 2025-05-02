@@ -1,8 +1,8 @@
-# sqlite_aggregate_function.py
+# SQLite_aggregate_function.py
 
 import sqlite3
 
-conn = sqlite3.connect('Python_Lesson_23_SQL/tysql.sqlite')
+conn = sqlite3.connect('Chapter_33_SQL/tysql.sqlite')
 
 curs = conn.cursor()
 
@@ -16,7 +16,7 @@ MIN()       返回某列的最小值
 SUM()       返回某列值之和
 '''
 
-# AVG()函数忽略列值为 NULL 的行。
+# AVG()函数忽略列值为NULL的行。
 ag_1 = curs.execute("SELECT AVG(prod_price) AS avg_price FROM Products;")
 
 for row in ag_1:
@@ -57,7 +57,7 @@ ag_7 = curs.execute("SELECT SUM(quantity) AS items_ordered FROM OrderItems WHERE
 for row in ag_7:
     print(row)
 
-# SUM()函数忽略列值为 NULL 的行。
+# SUM()函数忽略列值为NULL的行。
 ag_8 = curs.execute("SELECT SUM(item_price*quantity) AS total_price FROM OrderItems WHERE order_num = 20005;")
 
 for row in ag_8:
@@ -75,6 +75,6 @@ ag_10 = curs.execute("SELECT COUNT(*) AS num_items, MIN(prod_price) AS price_min
 for row in ag_10:
     print(row)
 
-# 在指定别名以包含某个聚集函数的结果时，不应该使用表中实际的列名。虽然这样做也算合法，但许多 SQL 实现不支持，可能会产生模糊的错误消息。
+# 在指定别名以包含某个聚集函数的结果时，不应该使用表中实际的列名。虽然这样做也算合法，但许多SQL实现不支持，可能会产生模糊的错误消息。
 
 conn.close()

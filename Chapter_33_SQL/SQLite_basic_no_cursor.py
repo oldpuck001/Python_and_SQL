@@ -1,4 +1,4 @@
-# sqlite_sursor.py
+# SQLite_basic_no_sursor.py
 
 import os
 import sqlite3

@@ -1,9 +1,9 @@
-# importdata.py
+# SQLite_import_data.py
 
 import sqlite3
 
 def convert(value):
-    # 在示例txt文件中，每行都是一條數就記錄，字段之間用脱字符（^）分隔。數字字段直接包含數字，而文本字段用兩個波浪字符（~）將其字符串括起
+    # 在示例txt文件中，每行都是一條數據記錄，字段之間用脱字符（^）分隔。數字字段直接包含數字，而文本字段用兩個波浪字符（~）將其字符串括起
     # 例如：~07276~^~HORMEL SPAM ... PORK W/ HAM MINCED CND~^ ... ^~1 serving~^^~~^0
     if value.startswith('~'):
         return value.strip('~')
