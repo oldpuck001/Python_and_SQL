@@ -1,4 +1,4 @@
-# import_example.py
+# import_function.py
 
 import os
 import pandas as pd
