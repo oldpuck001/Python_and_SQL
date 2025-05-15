@@ -41,5 +41,10 @@ def format_string(x):
         return x
 print(df.applymap(format_string))
 
+# 方法             適用對象                  說明
+# map()            Series                  適合對單欄的元素逐一處理
+# apply()          Series或DataFrame       針對整列或整欄處理（支援lambda或自定函數）
+# applymap()       DataFrame               對DataFrame中每個元素應用函數
+
 # 使用lambda表達式的版本
 print(df.applymap(lambda x: f'{x:,.2f}' if isinstance(x, (int, float)) else x))
