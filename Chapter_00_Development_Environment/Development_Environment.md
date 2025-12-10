@@ -23,7 +23,7 @@ Development_Environment.md
     安装指令：
     pip3 install pandas
     pip3 install openpyxl
-    pip install xlrd
+    pip3 install xlrd
     pip3 install python-docx
 
     pandas包含的包：numpy、pandas、python-dateutil、pytz、six、tzdata
@@ -32,8 +32,8 @@ Development_Environment.md
     python-docx包含的包：lxml、python-docx、typing_extensions
 
     常用的pip指令：
-    列出所有已安裝的包:      pip freeze
-    安裝指定包的最新版本:    pip install package
+    列出所有已安裝的包:       pip freeze
+    安裝指定包的最新版本:     pip install package
     安裝指定包版本:          pip install package==1.0.0
     更新包:                 pip install --upgrade package
     拆卸包:                 pip uninstall package
@@ -41,11 +41,11 @@ Development_Environment.md
     終端機的常用命令：
     查看你目前所在目錄的完整路徑:       pwd
     列出目前目錄中的文件:              ls、ls -la（MacOS系统）、dir（Windows系统）
-    ls 列出目錄內容；                  -la 以長列表格式顯示，並包含所有文件，隱藏文件也會顯示出來。
-    切換目錄(相對路徑):                cd path/to/dir
-    切換目錄(絕對路徑):                cd /path/to/dir
+    ls 列出目錄內容；                 -la 以長列表格式顯示，並包含所有文件，隱藏文件也會顯示出來。
+    切換目錄(相對路徑):               cd path/to/dir
+    切換目錄(絕對路徑):               cd /path/to/dir
     切換至父目錄:                     cd ..
-    先返回上一级目录，再进入子文件夹：  可以輸入 cd ../Desktop 先回到上一層目錄，再進入 Desktop 文件夾
+    先返回上一级目录，再进入子文件夹：   可以輸入 cd ../Desktop 先回到上一層目錄，再進入 Desktop 文件夾
     回到前一個/下一個指令:             ↑(上箭頭)/↓(下箭頭)
 
 (5) 安裝Node.js和npm（使用Electron框架的準備工作）

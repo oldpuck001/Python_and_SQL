@@ -33,7 +33,7 @@ btn['text']='Click me!'
 對控件調用方法pack時，將把控件放在其父控件（主控件）中。要指定主控件，可使用構造函數的第一個可選參數；如果沒有指定，將把頂級主窗口用作主控件，如下面的代碼片段所示：
 Label(text="I'm in the firstwindow!").pack()
 second=Toplevel()
-Label(second,text="I'm in the second window!").pack()
+Label(second, text="I'm in the second window!").pack()
 上面的代碼將創建出兩個窗口。Toplevel類表示除主窗口外的另一個頂級窗口，而Label就是文本標籤。
 
 以下是一些常用的 pack 參數：
