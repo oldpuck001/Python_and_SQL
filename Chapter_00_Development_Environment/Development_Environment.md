@@ -21,10 +21,12 @@ Development_Environment.md
     需要安裝的包：pandas、openpyxl、xlrd、python-docx
 
     安装指令：
-    pip3 install pandas
-    pip3 install openpyxl
-    pip3 install xlrd
-    pip3 install python-docx
+    which python3
+    /usr/local/bin//python3(返回結果)
+    /usr/local/bin/python3 -m pip install pandas
+    /usr/local/bin/python3 -m pip install openpyxl
+    /usr/local/bin/python3 -m pip install xlrd
+    /usr/local/bin/python3 -m pip install python-docx
 
     pandas包含的包：numpy、pandas、python-dateutil、pytz、six、tzdata
     openpyxl包含的包：et_xmlfile、openpyxl
