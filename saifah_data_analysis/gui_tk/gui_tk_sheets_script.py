@@ -35,14 +35,26 @@ class gui_tk_sheets_script_class:
             frame.combobox_widget = ttk.Combobox(frame, values=options, height=10, width=25, state='readonly')         # 使用 ttk.Combobox（现代下拉选框）
             frame.combobox_widget.pack(side=tk.LEFT, padx=5)
 
-            tk.Button(frame, text=control_frame_config['button_name'][1], command=lambda e=frame.entry_widget,f=frame.combobox_widget: self.input_sheet(e,f,text_area), width=10).pack(side=tk.LEFT, padx=5)
-            tk.Button(frame, text=control_frame_config['button_name'][2], command=lambda e=frame.entry_widget,f=frame.combobox_widget: self.del_sheet(e,f,text_area), width=10).pack(side=tk.LEFT, padx=5)
+            tk.Button(frame, text=control_frame_config['button_name'][1],
+                      command=lambda: self.input_sheet(frame.entry_widget,
+                                                       frame.combobox_widget,
+                                                       text_area),
+                      width=10).pack(side=tk.LEFT, padx=5)
+            tk.Button(frame, text=control_frame_config['button_name'][2],
+                      command=lambda: self.del_sheet(frame.entry_widget,
+                                                     frame.combobox_widget,
+                                                     text_area),
+                      width=10).pack(side=tk.LEFT, padx=5)
 
             frame_result.frames.append(frame)
 
         frame_export = tk.Frame(frame_result)
         frame_export.pack(side=tk.BOTTOM, fill=tk.X, padx=5, pady=(0,10))
-        tk.Button(frame_export, text=control_frame_config['button_name'][3], command=lambda e=frame_result.frames: self.output_sheet(e,num,text_area), width=10).pack()
+        tk.Button(frame_export, text=control_frame_config['button_name'][3],
+                  command=lambda: self.output_sheet(frame_result.frames,
+                                                    num,
+                                                    text_area),
+                  width=10).pack()
 
         return frame_result
     

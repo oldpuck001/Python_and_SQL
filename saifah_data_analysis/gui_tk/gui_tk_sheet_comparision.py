@@ -48,18 +48,21 @@ class gui_tk_sheet_comparision_class:
         frame_result.frame_5 = tk.Frame(frame_result)
         frame_result.frame_5.pack(side=tk.TOP, fill=tk.BOTH)
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][0],
-                  command=lambda e=frame_result.frame_1.entry_file_1,
-                                 f=frame_result.frame_2.combobox_sheet_1: self.input_sheet(e,f,text_area),
+                  command=lambda: self.input_sheet(frame_result.frame_1.entry_file_1,
+                                                   frame_result.frame_2.combobox_sheet_1,
+                                                   text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][1],
-                  command=lambda e=frame_result.frame_3.entry_file_2,
-                                 f=frame_result.frame_4.combobox_sheet_2: self.input_sheet(e,f,text_area),
+                  command=lambda: self.input_sheet(frame_result.frame_3.entry_file_2,
+                                                   frame_result.frame_4.combobox_sheet_2,
+                                                   text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][2],
-                  command=lambda e=frame_result.frame_1.entry_file_1,
-                                 f=frame_result.frame_2.combobox_sheet_1,
-                                 g=frame_result.frame_3.entry_file_2,
-                                 h=frame_result.frame_4.combobox_sheet_2: self.compare_sheet(e,f,g,h,text_area),
+                  command=lambda: self.compare_sheet(frame_result.frame_1.entry_file_1,
+                                                     frame_result.frame_2.combobox_sheet_1,
+                                                     frame_result.frame_3.entry_file_2,
+                                                     frame_result.frame_4.combobox_sheet_2,
+                                                     text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
 
         return frame_result

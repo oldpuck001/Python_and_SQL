@@ -52,18 +52,20 @@ class sheet_subtotals_ui_class:
         frame_result.frame_6 = tk.Frame(frame_result)
         frame_result.frame_6.pack(side=tk.TOP, fill=tk.BOTH)
         tk.Button(frame_result.frame_6, text=control_frame_config['button_name'][0],
-                  command=lambda e=frame_result.frame_1.entry_widget,
-                                 f=frame_result.frame_2.combobox_sheet,
-                                 g=frame_result.frame_3.combobox_row,
-                                 h=frame_result.frame_4.combobox_col,
-                                 i=frame_result.frame_5.combobox_value: self.input_sheet(e,f,g,h,i,text_area),
+                  command=lambda: self.input_sheet(frame_result.frame_1.entry_widget,
+                                                   frame_result.frame_2.combobox_sheet,
+                                                   frame_result.frame_3.combobox_row,
+                                                   frame_result.frame_4.combobox_col,
+                                                   frame_result.frame_5.combobox_value,
+                                                   text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         tk.Button(frame_result.frame_6, text=control_frame_config['button_name'][1],
-                  command=lambda e=frame_result.frame_1.entry_widget,
-                                 f=frame_result.frame_2.combobox_sheet,
-                                 g=frame_result.frame_3.combobox_row,
-                                 h=frame_result.frame_4.combobox_col,
-                                 i=frame_result.frame_5.combobox_value: self.subtotals_generate(e,f,g,h,i,text_area),
+                  command=lambda: self.subtotals_generate(frame_result.frame_1.entry_widget,
+                                                          frame_result.frame_2.combobox_sheet,
+                                                          frame_result.frame_3.combobox_row,
+                                                          frame_result.frame_4.combobox_col,
+                                                          frame_result.frame_5.combobox_value,
+                                                          text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
 
         frame_result.frame_2.combobox_sheet.bind('<<ComboboxSelected>>',

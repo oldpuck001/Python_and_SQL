@@ -66,14 +66,16 @@ class gui_tk_sheet_regex_class:
         frame_result.frame_5.pack(side=tk.TOP, fill=tk.BOTH)
         # 选择文件按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][0],
-                  command=lambda e=frame_result.frame_1.entry_widget,
-                                 f=frame_result.frame_2.combobox_sheet,
-                                 g=frame_result.frame_2.combobox_col: self.select_sheet(e,f,g,text_area),
+                  command=lambda: self.select_sheet(frame_result.frame_1.entry_widget,
+                                                    frame_result.frame_2.combobox_sheet,
+                                                    frame_result.frame_2.combobox_col,
+                                                    text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 导入数据按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][1],
-                  command=lambda e=frame_result.frame_1.entry_widget,
-                                 f=frame_result.frame_2.combobox_sheet: self.import_sheet(e,f,text_area),
+                  command=lambda: self.import_sheet(frame_result.frame_1.entry_widget,
+                                                    frame_result.frame_2.combobox_sheet,
+                                                    text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 预览数据按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][2],
@@ -81,26 +83,27 @@ class gui_tk_sheet_regex_class:
                   width=10).pack(side=tk.LEFT, padx=5)
         # 添加regex按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][3],
-                  command=lambda e=frame_result.frame_2.combobox_col,
-                                 f=frame_result.frame_2.combobox_label,
-                                 g=frame_result.frame_3.entry_widget,
-                                 h=frame_result.frame_4.regex_command_text_area: self.add_regex(e,f,g,h),
+                  command=lambda: self.add_regex(frame_result.frame_2.combobox_col,
+                                                 frame_result.frame_2.combobox_label,
+                                                 frame_result.frame_3.entry_widget,
+                                                 frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # []按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][4],
-                  command=lambda e=frame_result.frame_4.regex_command_text_area: self.add_brackets(e),
+                  command=lambda: self.add_brackets(frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # AND按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][5],
-                  command=lambda e=frame_result.frame_4.regex_command_text_area: self.add_and(e),
+                  command=lambda: self.add_and(frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # OR按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][6],
-                  command=lambda e=frame_result.frame_4.regex_command_text_area: self.add_or(e),
+                  command=lambda: self.add_or(frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 执行筛选按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][7],
-                  command=lambda e=frame_result.frame_4.regex_command_text_area: self.command_regex(e,text_area),
+                  command=lambda: self.command_regex(frame_result.frame_4.regex_command_text_area,
+                                                     text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 导出按钮
         tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][8],
@@ -378,7 +381,8 @@ class gui_tk_sheet_regex_class:
         result_info = export_new_xlsx_fun.export_new_xlsx(self.data_df)
 
         if result_info[0]:
-            os.remove(self.temp_path)
+            if self.temp_path:
+                os.remove(self.temp_path)
             fill_text += result_info[1]
             subprocess.run(['open', result_info[2]])
         
