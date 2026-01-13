@@ -47,17 +47,17 @@ class gui_tk_sheet_comparision_class:
 
         frame_result.frame_5 = tk.Frame(frame_result)
         frame_result.frame_5.pack(side=tk.TOP, fill=tk.BOTH)
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][0],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][0],
                   command=lambda: self.input_sheet(frame_result.frame_1.entry_file_1,
                                                    frame_result.frame_2.combobox_sheet_1,
                                                    text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][1],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][1],
                   command=lambda: self.input_sheet(frame_result.frame_3.entry_file_2,
                                                    frame_result.frame_4.combobox_sheet_2,
                                                    text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][2],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][2],
                   command=lambda: self.compare_sheet(frame_result.frame_1.entry_file_1,
                                                      frame_result.frame_2.combobox_sheet_1,
                                                      frame_result.frame_3.entry_file_2,

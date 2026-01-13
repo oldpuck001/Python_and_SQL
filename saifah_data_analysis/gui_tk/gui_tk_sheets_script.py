@@ -19,7 +19,7 @@ class gui_tk_sheets_script_class:
 
         frame_result.frames = []
 
-        num = control_frame_config['button_name'][0]
+        num = control_frame_config['widget_text'][0]
 
         for n in range(num):
 
@@ -35,12 +35,12 @@ class gui_tk_sheets_script_class:
             frame.combobox_widget = ttk.Combobox(frame, values=options, height=10, width=25, state='readonly')         # 使用 ttk.Combobox（现代下拉选框）
             frame.combobox_widget.pack(side=tk.LEFT, padx=5)
 
-            tk.Button(frame, text=control_frame_config['button_name'][1],
+            tk.Button(frame, text=control_frame_config['widget_text'][1],
                       command=lambda: self.input_sheet(frame.entry_widget,
                                                        frame.combobox_widget,
                                                        text_area),
                       width=10).pack(side=tk.LEFT, padx=5)
-            tk.Button(frame, text=control_frame_config['button_name'][2],
+            tk.Button(frame, text=control_frame_config['widget_text'][2],
                       command=lambda: self.del_sheet(frame.entry_widget,
                                                      frame.combobox_widget,
                                                      text_area),
@@ -50,7 +50,7 @@ class gui_tk_sheets_script_class:
 
         frame_export = tk.Frame(frame_result)
         frame_export.pack(side=tk.BOTTOM, fill=tk.X, padx=5, pady=(0,10))
-        tk.Button(frame_export, text=control_frame_config['button_name'][3],
+        tk.Button(frame_export, text=control_frame_config['widget_text'][3],
                   command=lambda: self.output_sheet(frame_result.frames,
                                                     num,
                                                     text_area),

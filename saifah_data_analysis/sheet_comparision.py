@@ -7,9 +7,9 @@ geometry = '720x480+50+50'
 control_frame_n = 1
 control_frame_config = [
                         {'name':                'sheet_comparision',
-                        'button_name':          ['选择文件 1', '选择文件 2', '开始对比'],
-                        'function_name':        '',
-                        'function_para':        ''},
+                         'widget_text':         ['选择文件 1', '选择文件 2', '开始对比'],
+                         'function_name':       '',
+                         'function_para':       ''},
 
                         {'text_area_hight':     19}
                        ]

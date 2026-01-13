@@ -13,7 +13,7 @@ from dataframe_tools_pd import columns_title_fun
 from dataframe_tools_pd import read_xlsx_xls_csv_txt_fun
 from dataframe_tools_pd import df_col_label_fun
 from dataframe_tools_pd import df_cleaning_fun
-from dataframe_tools_pd import df_to_xlsx_fun
+from dataframe_tools_pd import df_export_xlsx_fun
 from xlsx_tools_openxl import export_tree_new_xlsx_fun
 
 class gui_tk_in_out_sort_class:
@@ -75,7 +75,7 @@ class gui_tk_in_out_sort_class:
 
         frame_result.frame_7 = tk.Frame(frame_result)
         frame_result.frame_7.pack(side=tk.TOP, fill=tk.BOTH)
-        tk.Button(frame_result.frame_7, text=control_frame_config['button_name'][0],
+        tk.Button(frame_result.frame_7, text=control_frame_config['widget_text'][0],
                   command=lambda: self.input_sheet(frame_result.frame_1.entry_file,
                                                    frame_result.frame_2.combobox_sheet,
                                                    frame_result.frame_2.combobox_in_out,
@@ -84,7 +84,7 @@ class gui_tk_in_out_sort_class:
                                                    frame_result.frame_5.combobox_value,
                                                    text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
-        tk.Button(frame_result.frame_7, text=control_frame_config['button_name'][1],
+        tk.Button(frame_result.frame_7, text=control_frame_config['widget_text'][1],
                   command=lambda: self.export_result(frame_result.frame_1.entry_file,
                                                      frame_result.frame_2.combobox_sheet,
                                                      frame_result.frame_2.combobox_in_out,
@@ -310,7 +310,7 @@ class gui_tk_in_out_sort_class:
                     df_export_path = os.path.join(export_path, new_filename)
                     counter += 1
                 # 保存文件
-                df_to_xlsx_fun.df_to_xlsx(in_group_by_df, df_export_path, index=False)
+                df_export_xlsx_fun.df_export_xlsx(in_group_by_df, df_export_path, index=False)
 
                 in_number_total = in_group_by_df[value_column].sum()
                 in_group_by_summary['in_group_by_sort'].append(in_group_by_sort)
@@ -355,7 +355,7 @@ class gui_tk_in_out_sort_class:
                     df_export_path = os.path.join(export_path, new_filename)
                     counter += 1
                 # 保存文件
-                df_to_xlsx_fun.df_to_xlsx(out_group_by_df, df_export_path, index=False)
+                df_export_xlsx_fun.df_export_xlsx(out_group_by_df, df_export_path, index=False)
 
                 out_number_total = out_group_by_df[value_column].sum()
                 out_group_by_summary['out_group_by_sort'].append(out_group_by_sort)

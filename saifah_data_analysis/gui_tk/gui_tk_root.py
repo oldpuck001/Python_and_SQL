@@ -11,9 +11,7 @@ from gui_tk import gui_tk_find_subset
 from gui_tk import gui_tk_sheet_comparision
 from gui_tk import gui_tk_in_out_sort
 from gui_tk import gui_tk_in_out_value_check
-# import create_select_database_sqlite
-# import data_import_clean_file
-# import sql_sqlite_win_modular
+from gui_tk import gui_tk_sql_sqlite
 
 gui_tk_sheets_script_py = gui_tk_sheets_script.gui_tk_sheets_script_class()
 gui_tk_sheet_subtotals_py = gui_tk_sheet_subtotals.sheet_subtotals_ui_class()
@@ -22,9 +20,7 @@ gui_tk_find_subset_py = gui_tk_find_subset.gui_tk_find_subset_class()
 gui_tk_sheet_comparision_py = gui_tk_sheet_comparision.gui_tk_sheet_comparision_class()
 gui_tk_in_out_sort_py = gui_tk_in_out_sort.gui_tk_in_out_sort_class()
 gui_tk_in_out_value_check_py = gui_tk_in_out_value_check.gui_tk_in_out_value_check_class()
-# create_select_database_sqlite_modular_class = create_select_database_sqlite.create_select_database_sqlite_modular()
-# data_import_clean_file_modular_class = data_import_clean_file.data_import_clean_file_modular()
-# sql_sqlite_win_modular_class = sql_sqlite_win_modular.sql_sqlite_win_modular_class()
+gui_tk_sql_sqlite_py = gui_tk_sql_sqlite.gui_tk_sql_sqlite_class()
 
 class App:
     def __init__(self, title='My Application', geometry='1024x768+140+130', minsize_x=640, minsize_y=360, maxsize_x=1920, maxsize_y=1080,
@@ -53,8 +49,8 @@ class App:
 
         # 操作记录区
         self.frame_text_area = tk.Frame(self.root)
-        self.frame_text_area.pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True, padx=5, pady=5)
-        tk.Label(self.frame_text_area, text='Operation Log', anchor='w').pack(side=tk.TOP, fill=tk.X, padx=5, pady=5)
+        self.frame_text_area.pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True, padx=5, pady=(0, 5))
+        tk.Label(self.frame_text_area, text='Operation Log', anchor='w').pack(side=tk.TOP, fill=tk.X, padx=5, pady=(0, 5))
         try:
             height_value = self.control_frame_config[self.control_frame_n]['text_area_hight']
             self.text_area = ScrolledText(self.frame_text_area, height=height_value)
@@ -108,22 +104,10 @@ class App:
                                                                                     control_frame_config=self.control_frame_config[n],
                                                                                     text_area=self.text_area))
 
-            # if self.control_frame_config[n]['name'] in ['create_select_sqlite_database']:
-            #     self.root.control_frame_list.append(create_select_database_sqlite_modular_class.
-            #                                     create_select_database_sqlite_frame(root=self.root,
-            #                                                                         control_frame_config=self.control_frame_config[n],
-            #                                                                         text_area=self.text_area))
-            # elif self.control_frame_config[n]['name'] in ['data_import_clean_file']:
-            #     self.root.control_frame_list.append(data_import_clean_file_modular_class.
-            #                                         data_import_clean_file_frame(root=self.root,
-            #                                                                      control_frame_config=self.control_frame_config[n],
-            #                                                                      text_area=self.text_area))
-
-            # elif self.control_frame_config[n]['name'] in ['sql_sqlite_win']:
-            #     self.root.control_frame_list.append(sql_sqlite_win_modular_class.
-            #                                         sql_sqlite_win_modular_frame(root=self.root,
-            #                                                                      control_frame_config=self.control_frame_config[n],
-            #                                                                      text_area=self.text_area))
+            elif self.control_frame_config[n]['name'] in ['SQLite Database']:
+                 self.root.control_frame_list.append(gui_tk_sql_sqlite_py.gui_tk_sql_sqlite_frame(root=self.root,
+                                                                                                  control_frame_config=self.control_frame_config[n],
+                                                                                                  text_area=self.text_area))
 
     def bring_to_front(self):
         self.root.lift()

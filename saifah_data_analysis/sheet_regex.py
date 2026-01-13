@@ -7,9 +7,9 @@ geometry = '1280x720+50+50'
 control_frame_n = 1
 control_frame_config = [
                         {'name':                'sheet_regex',
-                        'button_name':          ['选择文件', '导入数据', '预览数据', '添加regex', '[]', 'AND', 'OR', '执行筛选', '导出文件'],
-                        'function_name':        '',
-                        'function_para':        ''},
+                         'widget_text':         ['选择文件', '导入数据', '预览数据', '添加regex', '[]', 'AND', 'OR', '执行筛选', '导出文件'],
+                         'function_name':       '',
+                         'function_para':       ''},
 
                         {'text_area_hight':     18}
                        ]

@@ -7,9 +7,9 @@ geometry = '720x480+50+50'
 control_frame_n = 1
 control_frame_config = [
                         {'name':                'in_out_sort',
-                        'button_name':          ['Import', 'Export'],
-                        'function_name':        '',
-                        'function_para':        ''},
+                         'widget_text':         ['Import', 'Export'],
+                         'function_name':       '',
+                         'function_para':       ''},
 
                         {'text_area_hight':     10}
                        ]

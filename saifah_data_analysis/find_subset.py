@@ -7,9 +7,9 @@ geometry = '720x480+50+50'
 control_frame_n = 1
 control_frame_config = [
                         {'name':                'find_subset',
-                        'button_name':          ['导入', '凑数'],
-                        'function_name':        '',
-                        'function_para':        ''},
+                         'widget_text':         ['导入', '凑数'],
+                         'function_name':       '',
+                         'function_para':       ''},
 
                         {'text_area_hight':     16}
                        ]

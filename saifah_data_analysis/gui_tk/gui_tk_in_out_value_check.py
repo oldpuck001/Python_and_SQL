@@ -24,12 +24,13 @@ class gui_tk_in_out_value_check_class:
     temp_path_2 = ''
 
     def gui_tk_in_out_value_check_frame(self, root, control_frame_config, text_area):
-    
-        frame_result = tk.Frame(root)
-        frame_result.pack(side=tk.BOTTOM, fill=tk.BOTH, padx=5, pady=5)
+
         options = []
         options_time_series = ['正向', '反向']
         options_in_out_mode = ['双列模式', '+/-单列模式', '标识列单列模式']
+
+        frame_result = tk.Frame(root)
+        frame_result.pack(side=tk.BOTTOM, fill=tk.BOTH, padx=5, pady=5)
 
         # sheet_1
         frame_result.frame_1 = tk.Frame(frame_result)
@@ -174,7 +175,7 @@ class gui_tk_in_out_value_check_class:
         # 按钮行
         frame_result.frame_9 = tk.Frame(frame_result)
         frame_result.frame_9.pack(side=tk.TOP, fill=tk.BOTH)
-        tk.Button(frame_result.frame_9, text=control_frame_config['button_name'][0],
+        tk.Button(frame_result.frame_9, text=control_frame_config['widget_text'][0],
                   command=lambda:self.import_sheet(root,
                                                    frame_result.frame_1.entry_file_1,
                                                    frame_result.frame_2.entry_sheet_1_name,
@@ -187,18 +188,18 @@ class gui_tk_in_out_value_check_class:
                                                    1),
                   width=15).pack(side=tk.LEFT, padx=5, pady=5)
         
-        tk.Button(frame_result.frame_9, text=control_frame_config['button_name'][1],
+        tk.Button(frame_result.frame_9, text=control_frame_config['widget_text'][1],
                   command=lambda: self.button_preview_fun(text_area, 1),
                   width=15).pack(side=tk.LEFT, padx=5, pady=5)
         
-        tk.Button(frame_result.frame_9, text=control_frame_config['button_name'][2],
+        tk.Button(frame_result.frame_9, text=control_frame_config['widget_text'][2],
                   command=lambda: self.button_label_fun(frame_result.frame_4.combobox_sheet_1_in_out_col,
                                                         frame_result.frame_4.combobox_sheet_1_in_label,
                                                         frame_result.frame_4.combobox_sheet_1_out_label,
                                                         1),
                   width=15).pack(side=tk.LEFT, padx=5, pady=5)
 
-        tk.Button(frame_result.frame_9, text=control_frame_config['button_name'][3],
+        tk.Button(frame_result.frame_9, text=control_frame_config['widget_text'][3],
                   command=lambda:self.import_sheet(root,
                                                    frame_result.frame_5.entry_file_2,
                                                    frame_result.frame_6.entry_sheet_2_name,
@@ -211,18 +212,18 @@ class gui_tk_in_out_value_check_class:
                                                    2),
                   width=15).pack(side=tk.LEFT, padx=5, pady=5)
         
-        tk.Button(frame_result.frame_9, text=control_frame_config['button_name'][4],
+        tk.Button(frame_result.frame_9, text=control_frame_config['widget_text'][4],
                   command=lambda: self.button_preview_fun(text_area, 2),
                   width=15).pack(side=tk.LEFT, padx=5, pady=5)
         
-        tk.Button(frame_result.frame_9, text=control_frame_config['button_name'][5],
+        tk.Button(frame_result.frame_9, text=control_frame_config['widget_text'][5],
                   command=lambda: self.button_label_fun(frame_result.frame_8.combobox_sheet_2_in_out_col,
                                                         frame_result.frame_8.combobox_sheet_2_in_label,
                                                         frame_result.frame_8.combobox_sheet_2_out_label,
                                                         2),
                   width=15).pack(side=tk.LEFT, padx=5, pady=5)
 
-        tk.Button(frame_result.frame_9, text=control_frame_config['button_name'][6],
+        tk.Button(frame_result.frame_9, text=control_frame_config['widget_text'][6],
                   command=lambda: self.button_comparison_fun(frame_result.frame_2.entry_sheet_1_name,
                                                              frame_result.frame_2.combobox_sheet_1_time_series,
                                                              frame_result.frame_2.combobox_sheet_1_item,

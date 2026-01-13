@@ -7,9 +7,9 @@ geometry = '1280x720+50+50'
 control_frame_n = 1
 control_frame_config = [
                         {'name':                'in_out_value_check',
-                        'button_name':          ['Import Sheet 1', 'Review Sheet 1', 'Sheet 1 Label', 'Import Sheet 2', 'Review Sheet 2', 'Sheet 2 Label', 'Comparison Data'],
-                        'function_name':        '',
-                        'function_para':        ''},
+                         'widget_text':         ['Import Sheet 1', 'Review Sheet 1', 'Sheet 1 Label', 'Import Sheet 2', 'Review Sheet 2', 'Sheet 2 Label', 'Comparison Data'],
+                         'function_name':       '',
+                         'function_para':       ''},
 
                         {'text_area_hight':     25}
                        ]

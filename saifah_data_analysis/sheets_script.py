@@ -6,10 +6,10 @@ title = '电子表格拼接'
 geometry = '1280x720+50+50'
 control_frame_n = 1
 control_frame_config = [
-                        {'name':          'sheets_script',
-                        'button_name':    [12, '添加', '删除', '导出'],
-                        'function_name':  '',
-                        'function_para':  ''},
+                        {'name':              'sheets_script',
+                         'widget_text':       [12, '添加', '删除', '导出'],
+                         'function_name':     '',
+                         'function_para':     ''},
 
                         {'text_area_hight':     16}
                        ]

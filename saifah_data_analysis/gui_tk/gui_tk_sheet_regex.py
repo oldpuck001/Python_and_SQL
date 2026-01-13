@@ -65,48 +65,48 @@ class gui_tk_sheet_regex_class:
         frame_result.frame_5 = tk.Frame(frame_result)
         frame_result.frame_5.pack(side=tk.TOP, fill=tk.BOTH)
         # 选择文件按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][0],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][0],
                   command=lambda: self.select_sheet(frame_result.frame_1.entry_widget,
                                                     frame_result.frame_2.combobox_sheet,
                                                     frame_result.frame_2.combobox_col,
                                                     text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 导入数据按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][1],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][1],
                   command=lambda: self.import_sheet(frame_result.frame_1.entry_widget,
                                                     frame_result.frame_2.combobox_sheet,
                                                     text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 预览数据按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][2],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][2],
                   command=lambda: self.button_preview_fun(text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 添加regex按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][3],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][3],
                   command=lambda: self.add_regex(frame_result.frame_2.combobox_col,
                                                  frame_result.frame_2.combobox_label,
                                                  frame_result.frame_3.entry_widget,
                                                  frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # []按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][4],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][4],
                   command=lambda: self.add_brackets(frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # AND按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][5],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][5],
                   command=lambda: self.add_and(frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # OR按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][6],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][6],
                   command=lambda: self.add_or(frame_result.frame_4.regex_command_text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 执行筛选按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][7],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][7],
                   command=lambda: self.command_regex(frame_result.frame_4.regex_command_text_area,
                                                      text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
         # 导出按钮
-        tk.Button(frame_result.frame_5, text=control_frame_config['button_name'][8],
+        tk.Button(frame_result.frame_5, text=control_frame_config['widget_text'][8],
                   command=lambda: self.export_data(text_area),
                   width=10).pack(side=tk.LEFT, padx=5)
 
