@@ -13,6 +13,7 @@ from dataframe_tools_pd import df_review_xlsx_fun
 from dataframe_tools_pd import df_export_xlsx_fun
 from sql_tools_sqlite import create_database_sqlite_fun
 from sql_tools_sqlite import get_all_tables_sqlite_fun
+from sql_tools_sqlite import get_table_columns_sqlite
 from sql_tools_sqlite import import_dataframe_sqlite_fun
 from sql_tools_sqlite import get_table_info_sqlite_fun
 from sql_tools_sqlite import table_exists_sqlite
@@ -56,24 +57,26 @@ class gui_tk_sql_sqlite_class:
                   width=18).pack(side=tk.LEFT, padx=(3, 6), pady=5)
         
         tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][1],
-                  #command=lambda: self.sql_sqlite_backup(root, control_frame_config, text_area),
-                  width=18).pack(side=tk.LEFT, padx=6, pady=5)
-        
-        tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][2],
                   command=lambda: self.show_tables_name_button(frame_result.frame_1.entry_file,
                                                                text_area),
                   width=18).pack(side=tk.LEFT, padx=6, pady=5)
 
-        tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][3],
+        tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][2],
                   command=lambda: self.find_table_name_button(root,
                                                        frame_result.frame_1.entry_file,
                                                        text_area),
                   width=18).pack(side=tk.LEFT, padx=6, pady=5)
 
-        tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][4],
+        tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][3],
                   command=lambda: self.show_table_info_button(root,
                                                               frame_result.frame_1.entry_file,
                                                               text_area),
+                  width=18).pack(side=tk.LEFT, padx=6, pady=5)
+
+        tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][4],
+                  command=lambda: self.show_col_button(root,
+                                                       frame_result.frame_1.entry_file,
+                                                       text_area),
                   width=18).pack(side=tk.LEFT, padx=6, pady=5)
 
         tk.Button(frame_result.frame_3, text=control_frame_config['widget_text'][2][5],
@@ -321,12 +324,40 @@ class gui_tk_sql_sqlite_class:
             table_name = self.select_table(root, tables_list)
             result_text = get_table_info_sqlite_fun.get_table_info_sqlite(database_path, table_name)
             if result_text[0]:
-                fill_text += 'Column Info:\n'
+
+                fill_text += f'Table {table_name} column Info:\n'
                 fill_text += (f"{'CID':<4} {'NAME':<15} {'TYPE':<12} {'NOT NULL':<9} {'DEFAULT':<8} {'PK':<3}\n")
                 fill_text += (f"{'-'*4} {'-'*15} {'-'*12} {'-'*9} {'-'*8} {'-'*3}\n")
                 for cid, name, col_type, notnull, default, pk in result_text[1][0]:
                     fill_text += (f'{cid:<4} {name:<15} {col_type:<12} {notnull:<9} {str(default):<8} {pk:<3}\n')
                 fill_text += f'\nNumber of Rows: {result_text[1][1]}\n'
+            else:
+                fill_text += result_text[1]
+        else:
+            fill_text += result_info[1]
+
+        gui_tk_area_text.text_area_fill(text_area, fill_text)
+
+
+    # 获取所有列按钮函数
+    def show_col_button(self, root, entry_file, text_area):
+
+        fill_text = ''
+
+        database_path = entry_file.get()
+
+        result_info = get_all_tables_sqlite_fun.get_all_tables_sqlite(database_path)
+
+        if result_info[0]:
+            tables_list = result_info[1]
+            table_name = self.select_table(root, tables_list)
+            result_text = get_table_columns_sqlite.get_table_columns(database_path, table_name)
+            if result_text[0]:
+                fill_text += ', '.join(result_text[1])
+                if fill_text:
+                    fill_text += '\n'
+                else:
+                    fill_text += 'There is no column in the table.\n'
             else:
                 fill_text += result_text[1]
         else:

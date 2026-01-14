@@ -12,7 +12,7 @@ control_frame_config = [
                         {'name':                 'SQLite Database',
                          'widget_text':          [['SQLite File Path', '创建/选择SQLite数据库'],
                                                   ['SQL Command'],
-                                                  ['Import xlsx/xls/csv/txt', 'Import Floder', 'Show Tables', 'Check Table', 'Show Table Info', 'Backup'],
+                                                  ['Import xlsx/xls/csv/txt', 'Show Tables', 'Check Table', 'Show Table Info', 'Show Columns', 'Backup'],
                                                   ['Select Review', 'Select Export', 'SQL Command', 'Save Select', 'Clear', 'Help Text'],
                                                  ],
                          'function_name':        '',

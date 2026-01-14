@@ -6,17 +6,21 @@ Development_Environment.md
 
     Python的官方網站：https://www.python.org
 
-(2) 安裝集成开发环境（IDE）：VScode
+(2) 安装conda
+
+
+
+(3) 安裝集成开发环境（IDE）：VScode
 
     VScode官方網站：https://code.visualstudio.com
 
-(3) 安装VScode延伸模組
+(4) 安装VScode延伸模組
 
     中文支持：Language pack extension for Chinese
     Python延伸模組：Python、Pylance、Python Debugger
     HTML延伸模組：Live Server
 
-(4) 安装Python第三方庫（在终端中安装）
+(5) 安装Python第三方庫（在终端中安装）
 
     需要安裝的包：pandas、openpyxl、xlrd、python-docx
 
@@ -50,7 +54,7 @@ Development_Environment.md
     先返回上一级目录，再进入子文件夹：   可以輸入 cd ../Desktop 先回到上一層目錄，再進入 Desktop 文件夾
     回到前一個/下一個指令:             ↑(上箭頭)/↓(下箭頭)
 
-(5) 安裝Node.js和npm（使用Electron框架的準備工作）
+() 安裝Node.js和npm（使用Electron框架的準備工作）
 
     Node.js官方網站: https://nodejs.org/
     使用Windows系统安装程序时，在第一个界面将添加到环境变量的选择框选中。
