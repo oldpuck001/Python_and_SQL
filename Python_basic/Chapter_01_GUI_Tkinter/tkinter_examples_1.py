@@ -2,7 +2,7 @@
 
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox, filedialog
+from tkinter import messagebox
 from tkinter.scrolledtext import ScrolledText
 
 def show_info():
