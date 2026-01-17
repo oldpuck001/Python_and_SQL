@@ -120,7 +120,47 @@ class gui_tk_sql_sqlite_class:
                   command=lambda: self.manual_button(),
                   width=18).pack(side=tk.LEFT, padx=(6, 3), pady=5)
 
+        # 注释快捷键
+        frame_result.frame_2.sql_command_text_area.bind('<Command-/>', self.toggle_sql_comment)
+        frame_result.frame_2.sql_command_text_area.bind('<Control-/>', self.toggle_sql_comment)
         return frame_result
+
+
+    # 注释功能函数
+    def toggle_sql_comment(self, event=None):
+
+        text = event.widget
+
+        try:
+            start = text.index('sel.first')
+            end = text.index('sel.last')
+        except tk.TclError:                             # 没有选取文字，注释当前行
+            start = text.index('insert linestart')
+            end = text.index('insert lineend')
+
+        start_line = int(start.split('.')[0])
+        end_line = int(end.split('.')[0])
+
+        for line_n in range(start_line, end_line+1):
+
+            line_start = f'{line_n}.0'
+            line_end = f'{line_n}.end'
+
+            line_text = text.get(line_start, line_end)
+
+            stripped = line_text.lstrip()
+            indent_len = len(line_text) - len(stripped)
+
+            if stripped.startswith('--'):
+
+                new_line = line_text[:indent_len] + stripped[2:].lstrip()       # 取消注释
+
+            else:
+
+                new_line = line_text[:indent_len] + '-- ' + stripped            # 加上注释
+
+            text.delete(line_start, line_end)
+            text.insert(line_start,new_line)
 
 
     # 连接数据库按钮函数
